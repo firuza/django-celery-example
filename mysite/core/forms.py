@@ -13,4 +13,4 @@ class GenerateRandomUserForm(forms.Form):
 class GenerateSimulationForm(forms.ModelForm):
     class Meta:
         model = Simulations
-        fields = ['name', 'cirfile']
+        fields = ['name', 'cirfile_link']
