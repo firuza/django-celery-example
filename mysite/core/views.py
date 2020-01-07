@@ -56,6 +56,9 @@ class ViewSimulationList(ListView):
     context_object_name = 'simulations'
     template_name = 'core/view_simulation_list.html'
 
+    def get_queryset(self):
+        return Simulations.objects.filter(created_by=self.request.user)
+
 class ViewSimulation(DetailView):
     model = Simulations
     context_object_name = 'simulation'
