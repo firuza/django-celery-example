@@ -50,7 +50,7 @@ class GenerateSimulation(CreateView):
 
         create_simulation.delay(cirfile, uid, self.object.pk)
         messages.success(self.request, 'simulation is being created')
-        return redirect('users_list')
+        return redirect('viewsimulationlist')
 
 class ViewSimulationList(ListView):
     model = Simulations
