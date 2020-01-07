@@ -4,8 +4,8 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Simulations(models.Model):
     name = models.CharField(max_length=50)
-    cirfile = models.FileField()
-    outfile = models.FileField()
+    cirfile_link = models.FileField()
+    outfile_link = models.FileField()
     created_by = models.ForeignKey(User, null=True)
     created_on = models.DateTimeField(null=True)
 

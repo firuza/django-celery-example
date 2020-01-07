@@ -23,6 +23,6 @@ def create_simulation(cirfile, uid, pk):
     cmd = 'ngspice -b ' + cirfile + ' >  ' + os.getcwd()+'/media/'+ uid + '_out.txt'
     os.system(cmd)
     sim = Simulations.objects.get(pk=pk)
-    sim.outfile = os.getcwd()+'/media/'+ uid + '_out.txt'
+    sim.outfile_link = os.getcwd()+'/media/'+ uid + '_out.txt'
     sim.save()
     return 'Output file generated'    

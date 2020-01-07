@@ -43,7 +43,7 @@ class GenerateSimulation(CreateView):
 
         #Save record: cirfile, created by
         self.object = form.save(commit=False)
-        self.object.cirfile = cirfile
+        self.object.cirfile_link = cirfile
         self.object.created_by = self.request.user
         self.object.save()
 
