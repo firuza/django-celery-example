@@ -13,7 +13,9 @@
 <body>
   <h1>Django Celery Example</h1>
   <a href="{% url 'users_list' %}">Users List</a> /
-  <a href="{% url 'generate' %}">Generate Random Users</a>
+  <a href="{% url 'generate' %}">Generate Random Users</a>  /
+  <a href="{% url 'generatesimulations' %}">Create Simulation</a> /
+  <a href="{% url 'viewsimulationlist' %}">View Simulation List</a>
   <hr>
 
   {% if messages %}

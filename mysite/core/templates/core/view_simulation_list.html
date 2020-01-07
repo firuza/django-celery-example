@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Simulation List</h2>
+
+<ul>
+    {% for sim in simulations %}
+        <li> <a href="{% url 'viewsimulation' sim.pk %}"> {{ sim.name }} </a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

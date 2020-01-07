@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 from django.utils.crypto import get_random_string
 
 from celery import shared_task
+import uuid, os
+from .models import Simulations
 
 
 @shared_task
@@ -14,3 +16,13 @@ def create_random_user_accounts(total):
         password = get_random_string(50)
         User.objects.create_user(username=username, email=email, password=password)
     return '{} random users created with success!'.format(total)
+
+
+@shared_task
+def create_simulation(cirfile, uid, pk):
+    cmd = 'ngspice -b ' + cirfile + ' >  ' + os.getcwd()+'/media/'+ uid + '_out.txt'
+    os.system(cmd)
+    sim = Simulations.objects.get(pk=pk)
+    sim.outfile = os.getcwd()+'/media/'+ uid + '_out.txt'
+    sim.save()
+    return 'Output file generated'    
