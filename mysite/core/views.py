@@ -35,7 +35,7 @@ class GenerateSimulation(CreateView):
 
     def form_valid(self, form):
         # Get file 
-        myfile = self.request.FILES['cirfile']
+        myfile = self.request.FILES['cirfile_link']
         fs = FileSystemStorage()
         uid=uuid.uuid4().hex # Unique name
         filename = fs.save(uid+'.cir', myfile) #Save the file on system with unique name
@@ -43,7 +43,8 @@ class GenerateSimulation(CreateView):
 
         #Save record: cirfile, created by
         self.object = form.save(commit=False)
-        self.object.cirfile_link = cirfile
+        self.object.cirfile_link = cirfile #Circuit file link
+        savecontent(cirfile, self.object, 'netlist_content')
         self.object.created_by = self.request.user
         self.object.save()
 
@@ -63,3 +64,13 @@ class ViewSimulation(DetailView):
     model = Simulations
     context_object_name = 'simulation'
     template_name = 'core/view_simulation.html'
+
+def savecontent(filename, obj, field):
+    f = open(filename,"r")
+    if f.mode == "r":
+        contents = f.read()
+
+        # using setattr to set value of a field, where fieldname is passed to the function
+        # self.object.<fieldname> = contents
+        setattr(obj, field, contents)
+

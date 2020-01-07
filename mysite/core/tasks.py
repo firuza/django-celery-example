@@ -7,7 +7,6 @@ from celery import shared_task
 import uuid, os
 from .models import Simulations
 
-
 @shared_task
 def create_random_user_accounts(total):
     for i in range(total):
@@ -23,6 +22,11 @@ def create_simulation(cirfile, uid, pk):
     cmd = 'ngspice -b ' + cirfile + ' >  ' + os.getcwd()+'/media/'+ uid + '_out.txt'
     os.system(cmd)
     sim = Simulations.objects.get(pk=pk)
-    sim.outfile_link = os.getcwd()+'/media/'+ uid + '_out.txt'
+    outfile_link = os.getcwd()+'/media/'+ uid + '_out.txt'
+    sim.outfile_link = outfile_link
+    f = open(outfile_link,"r")
+    if f.mode == "r":
+        contents = f.read()
+        sim.simulation_output_text = contents    
     sim.save()
     return 'Output file generated'    

@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Simulation Detail</h2>
 
-<ul>
-    <li> Name: {{ simulation.name }} </li>
-    <li> Cir file: {{ simulation.cirfile }} </li>
-    <li> Output file: {{ simulation.outfile }} </li>
-</ul>
+<h2> Simulation: {{ simulation.name }} </h2>
+
+<pre>
+    {{ simulation.simulation_output_text }}
+</pre>
 {% endblock %}
