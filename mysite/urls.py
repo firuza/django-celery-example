@@ -11,7 +11,8 @@ urlpatterns = [
     url(r'^generate/$', views.GenerateRandomUserView.as_view(), name='generate'),
     url(r'^generatesimulations/$', views.GenerateSimulation.as_view(), name='generatesimulations'),
     url(r'^viewsimulation/(?P<pk>\d+)$', views.ViewSimulation.as_view(), name='viewsimulation'),
-    url(r'^viewsimulationlist/$', views.ViewSimulationList.as_view(), name='viewsimulationlist')
+    url(r'^viewsimulationlist/$', views.ViewSimulationList.as_view(), name='viewsimulationlist'),
+    url(r'^showbokehplot/$', views.showbokehplot, name='showbokehplot')
 ]
 
 if settings.DEBUG:

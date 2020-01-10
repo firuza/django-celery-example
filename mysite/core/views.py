@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.views.generic import TemplateView
 from django.views.generic.list import ListView
 from django.views.generic.edit import FormView
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django.views.generic import CreateView, DetailView
 
 from .forms import GenerateRandomUserForm, GenerateSimulationForm
@@ -13,6 +13,11 @@ from django.core.files.storage import FileSystemStorage
 import uuid, os
 
 from .models import Simulations
+
+from bokeh.plotting import figure, output_file, show
+from bokeh.embed import components
+from bokeh.models import ColumnDataSource
+import pandas as pd
 
 class UsersListView(ListView):
     template_name = 'core/users_list.html'
@@ -74,3 +79,10 @@ def savecontent(filename, obj, field):
         # self.object.<fieldname> = contents
         setattr(obj, field, contents)
 
+
+def showbokehplot(self):
+    d = pd.read_csv('media/AC1.ssv.data', sep=' ', header=None, usecols=[1,2], names=['f', 'A'])
+    plot = figure(title='ph(out)', x_axis_type="log", x_axis_label='f [Hz]', y_axis_label='V', plot_width=600, plot_height=400)
+    plot.line(x='f', y='A', source=ColumnDataSource(d), legend='Ideal Response')
+    script, div = components(plot)
+    return render(self, 'core/plotbokeh.html', {'script':script, 'div':div})
