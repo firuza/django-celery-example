@@ -86,3 +86,9 @@ def showbokehplot(self):
     plot.line(x='f', y='A', source=ColumnDataSource(d), legend='Ideal Response')
     script, div = components(plot)
     return render(self, 'core/plotbokeh.html', {'script':script, 'div':div})
+
+def showchart(self):
+    d = pd.read_csv('media/AC1.ssv.data', sep=' ', header=None, usecols=[1,2], names=['x', 'y'])
+    x = d['x'].tolist()
+    y = d['y'].tolist()
+    return render(self, 'core/mychart.html', {'x':x, 'y':y})

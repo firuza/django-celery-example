@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<canvas id="myChart" height="200"></canvas>
+
+<script type="text/javascript">
+var xdata = {{ x }}
+var ydata = {{ y }}
+</script>
+
+{% endblock %}
+
+
+{% block javascript %}
+
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: xdata,
+            datasets: [{
+                label: 'vdb(out)',
+                fill: false,
+                backgroundColor: 'rgba(255, 99, 132, 1)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                data: ydata
+            }]
+        },
+        options: {
+            responsive: true,
+            title: {
+                display: true,
+                text: 'Chart with Multiline Labels'
+            },
+            scales: {
+                xAxes: [{
+                    display: true,
+
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Frequency'
+                    },
+                    ticks: {
+                        autoSkip: true,
+                        maxTicksLimit: 5.1
+                    }
+                }],
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'V'
+                    },
+                    ticks: {
+                        reverse: false
+                    }
+                }]
+            }
+
+        }
+    });
+</script>
+{% endblock %}
