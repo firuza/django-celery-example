@@ -6,11 +6,14 @@
 Welcome to EDA Tool on Cloud's documentation!
 =============================================
 
+The ‘EDA tool on cloud’ aims to provide a facility for a user to design different types of electronic circuits and simulate them by providing simulation parameters on the web. The detailed features will be updated soon.
+
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+    :numbered:
+    :maxdepth: 2
+    :caption: Contents:
 
-
+    schematic/index
 
 Indices and tables
 ==================
