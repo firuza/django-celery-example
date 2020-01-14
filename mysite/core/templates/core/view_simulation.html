@@ -9,6 +9,12 @@
 <a href="{% url 'showchart' %}"> Chart </a>
 
 
+<h2>Circuit Netlist</h2>
+<pre>
+    {{ simulation.netlist_content }}
+</pre>
+
+<h2>Simulation Output</h2>
 <pre>
     {{ simulation.simulation_output_text }}
 </pre>
