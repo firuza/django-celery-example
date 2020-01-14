@@ -1,5 +1,8 @@
 # Django Celery Example
 
+[![Documentation Status](https://readthedocs.org/projects/django-celery-example/badge/?version=latest)](https://django-celery-example.readthedocs.io/en/latest/?badge=latest)
+
+
 Example used in the blog post [How to Use Celery and RabbitMQ with Django](https://simpleisbetterthancomplex.com/tutorial/2017/08/20/how-to-use-celery-with-django.html?utm_source=github&utm_medium=repository)
 
 ## Running Locally
