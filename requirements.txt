@@ -3,3 +3,4 @@ Django==1.11.4
 bokeh==1.2.0
 pandas==0.25.3
 sphinx
+sphinx-rtd-theme
