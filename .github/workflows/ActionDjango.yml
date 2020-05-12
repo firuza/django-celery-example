@@ -23,6 +23,6 @@ jobs:
         pip install -r requirements.txt
     - name: Run Tests
       run: |
-	echo "no test to run"
+        echo "no test to run"
         #python manage.py test
 
