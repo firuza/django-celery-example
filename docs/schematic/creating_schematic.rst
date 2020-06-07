@@ -6,4 +6,4 @@ The web system will be divided into two panes. The left pane will contain thumbn
 
 Given below is the list of APIs generated from swagger openapi
 
-.. openapi:: ../specs/swagger_openapi.yml
+.. openapi:: swagger_openapi.yml
