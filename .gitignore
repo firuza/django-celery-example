@@ -105,3 +105,4 @@ ENV/
 *.sqlite3
 
 /media
+/mysql_data
