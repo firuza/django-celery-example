@@ -4,4 +4,4 @@ List of APIs
 
 Given below is the list of APIs generated from swagger openapi
 
-.. openapi:: ../specs/swagger_openapi.yml
+.. openapi:: swagger_openapi.yml
