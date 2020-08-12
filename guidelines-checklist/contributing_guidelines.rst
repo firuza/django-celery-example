@@ -1,5 +1,5 @@
 ####################
-Creating a new issue
+Contributing guidelines
 ####################
 
 *****
