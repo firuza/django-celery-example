@@ -7,5 +7,5 @@ Contributing
     :maxdepth: 2
 
     new_issue
-    contributing
+    contributing_guidelines
 
