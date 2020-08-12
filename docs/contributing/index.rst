@@ -1,1 +1,1 @@
-.. include:: ../../guidelines-checklist/contributing_guidelines.rst
+.. mdinclude:: ../../guidelines-checklist/new-issue-guidelines.md
