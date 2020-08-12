@@ -14,6 +14,7 @@ The ‘EDA tool on cloud’ aims to provide a facility for a user to design diff
     :caption: Contents:
 
     schematic/index
+    contributing/index
 
 Indices and tables
 ==================
