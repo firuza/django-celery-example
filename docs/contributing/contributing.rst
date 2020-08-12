@@ -1,0 +1,1 @@
+.. include:: ../../guidelines-checklist/contributing_guidelines.rst

@@ -1,1 +1,11 @@
-.. mdinclude:: ../../guidelines-checklist/new-issue-guidelines.md
+###############
+Contributing
+###############
+
+
+.. toctree::
+    :maxdepth: 2
+
+    new_issue
+    contributing
+
