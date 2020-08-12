@@ -1,5 +1,9 @@
-# Creating a new issue
+####################
+Creating a new issue
+####################
 
-## Title
+*****
+Title
+*****
 Enter a crisp and meaningful title. 
 
