@@ -39,12 +39,13 @@ release = '1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx_rtd_theme',
     'sphinx.ext.autodoc',
     'sphinx.ext.doctest',
     'sphinx.ext.coverage',
     'sphinx_rtd_theme',
     'sphinxcontrib.openapi',
-    'm2r',
+    'm2r2',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
