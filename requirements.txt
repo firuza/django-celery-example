@@ -5,3 +5,4 @@ pandas==0.25.3
 sphinx
 sphinx-rtd-theme
 sphinxcontrib-openapi
+m2r2
